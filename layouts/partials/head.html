@@ -1,0 +1,14 @@
+<div class="header">
+	<h1>{{ .Site.Title }}</h1>
+	<h2>{{ .Site.Params.TitleTag | markdownify }}</h2>
+
+	<nav class="nav">
+		<ul class="flat">
+			{{ range $index, $key := .Site.Params.Nav }}
+			<li>
+				<a href="{{ $key.link }}">{{ $key.name }}</a>
+			</li>
+			{{ end }}
+		</ul>
+	</nav>
+</div>
