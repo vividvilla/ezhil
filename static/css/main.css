@@ -3,6 +3,7 @@ body {
     font-weight: 300;
 	color: #333;
 	line-height: 1.6;
+	font-size: 16px;
 }
 
 a, a:hover {
@@ -61,13 +62,6 @@ blockquote {
 blockquote cite {
     font-size: 70%;
     opacity: .8
-}
-
-.browsehappy {
-    margin: .2rem 0;
-    background: #ccc;
-    color: #000;
-    padding: .2rem 0
 }
 
 a,a:hover {
@@ -135,9 +129,6 @@ ul.flat li {
     min-height: .1rem
 }
 
-.page-label {
-}
-
 .page-title {
     margin: 0
 }
@@ -150,24 +141,14 @@ ul {
     list-style: disc inside
 }
 
-.codehilitetable td {
-    border: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    padding-right: 0
-}
-
-.codehilitetable td pre {
+.highlight pre {
     margin-bottom: 0;
-    margin-top: 0
+	margin-top: 0;
+	padding: 20px;
+	background-color: #FAFAFA !important;
 }
 
-.codehilitetable td.linenos {
-    color: #999;
-    font-size: .9em
-}
-
-.codehilite {
+.highlight {
     background: 0 0
 }
 
@@ -219,8 +200,6 @@ ul {
     margin-top: 10px;
     text-transform: capitalize;
 }
-
-.section {}
 
 .section .section-header {
 	font-size: 0.75rem;
@@ -280,4 +259,36 @@ ul {
 
 .tag-cloud a {
     margin-right: 15px;
+}
+
+@media (max-width: 767px) {
+	body {
+		padding: 20px;
+	}
+
+	h1 {
+		font-size: 2rem
+	}
+
+	h2 {
+		font-size: 1.6rem
+	}
+
+	h3 {
+		font-size: 1.2rem
+	}
+
+	h4 {
+		font-size: 1rem
+	}
+
+	.container {
+		margin-top: 10px;
+	}
+}
+
+@media (max-width: 480px) {
+	body {
+		font-size: 14px;
+	}
 }
