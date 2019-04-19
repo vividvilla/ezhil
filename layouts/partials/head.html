@@ -7,7 +7,7 @@
 		<nav class="nav social">
 			<ul class="flat">
 				{{- range $index, $key := .Site.Params.Social -}}
-				<a href="{{ $key.link }}" title="{{ $key.name }}"><i data-feather="{{ $key.icon }}"></i></a>
+				<a href="{{ $key.url }}" title="{{ $key.name }}"><i data-feather="{{ $key.icon }}"></i></a>
 				{{- end -}}
 			</ul>
 		</nav>
@@ -15,9 +15,9 @@
 
 	<nav class="nav">
 		<ul class="flat">
-			{{ range $index, $key := .Site.Params.Nav }}
+			{{ range .Site.Menus.main }}
 			<li>
-				<a href="{{ $key.link }}">{{ $key.name }}</a>
+				<a href="{{ .URL }}">{{ .Name }}</a>
 			</li>
 			{{ end }}
 		</ul>
