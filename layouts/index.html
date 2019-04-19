@@ -10,7 +10,11 @@
 				Recent posts
 			</h2>
 			<div class="posts">
-				{{- range first .Site.Params.SidebarRecentLimit .Data.Pages -}}
+				{{- $.Scratch.Set "counter" 0 -}}
+				{{- range .Data.Pages -}}
+				{{- if (in (.Site.Params.excludedTypes | default (slice "page")) .Type) -}}
+				{{- else -}}
+				{{- if lt ($.Scratch.Get "counter") (.Site.Params.RecentPostsCount | default 10) -}}
 				<div class="post">
 					<div class="meta">{{ dateFormat "Jan 2, 2006" .Date }}</div>
 					<a class="title" href="{{ .RelPermalink }}">{{.Title}}</a> &mdash;
@@ -24,6 +28,9 @@
 						{{ end }}
 					</span>
 				</div>
+				{{- $.Scratch.Set "counter" (add ($.Scratch.Get "counter") 1) -}}
+				{{- end -}}
+				{{- end -}}
 				{{- end -}}
 
 				<a href="/posts">All articles →</a>
@@ -32,5 +39,8 @@
 	</div>
 	{{ partial "footer.html" . }}
 	{{ template "_internal/google_analytics_async.html" . }}
+	{{- with .Site.Params.Social -}}
+	<script>feather.replace()</script>
+	{{- end -}}
 </body>
 </html>

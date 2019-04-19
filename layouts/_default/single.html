@@ -14,9 +14,19 @@
 			{{ .Content }}
 		</div>
 
-		{{ partial "disqus.html" . }}
-	</div>
+		{{- $.Scratch.Set "isDisqus" true -}}
+		{{- if and (isset .Params "disqus") (eq .Params.disabledisqus false) -}}
+		{{- $.Scratch.Set "isDisqus" false -}}
+		{{- end -}}
 
+		{{- if and (isset .Params "type") (in (.Site.Params.disableDisqusTypes | default (slice "page")) .Params.type) -}}
+		{{- $.Scratch.Set "isDisqus" false -}}
+		{{- end -}}
+
+		{{- if eq ($.Scratch.Get "isDisqus") true -}}
+		{{- partial "disqus.html" . -}}
+		{{- end -}}
+	</div>
 	{{ partial "footer.html" . }}
 </body>
 </html>

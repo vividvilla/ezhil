@@ -13,10 +13,13 @@
 		{{ end }}
 
 		<ul class="posts">
-			{{- range first .Site.Params.SidebarRecentLimit .Data.Pages -}}
+			{{- range .Data.Pages -}}
+			{{- if (in (.Site.Params.excludedTypes | default (slice "page")) .Type) -}}
+			{{- else -}}
 			<li class="post">
 				<a href="{{ .RelPermalink }}">{{.Title}}</a> <span class="meta">{{ dateFormat "Jan 2, 2006" .Date }}</span>
 			</li>
+			{{- end -}}
 			{{- end -}}
 		</ul>
 	</div>

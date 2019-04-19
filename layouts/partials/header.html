@@ -1,22 +1,26 @@
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
 	{{- $title := ( .Title ) -}}
 	{{- $siteTitle := ( .Site.Title ) -}}
-
 	{{- if .IsHome -}}
-		<title>{{ $siteTitle }}</title>
+	<title>{{ $siteTitle }} {{- if isset .Site.Params "subtitle" -}} - {{ .Site.Params.Subtitle }}{{- end -}} </title>
 	{{- else -}}
-		<title>{{ $title }} - {{ $siteTitle }}</title>
+	<title>{{ $title }} - {{ $siteTitle }}</title>
 	{{- end -}}
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	{{ template "_internal/opengraph.html" . }}
-	{{ template "_internal/twitter_cards.html" . }}
-
+	{{- template "_internal/opengraph.html" . -}}
+	{{- template "_internal/twitter_cards.html" . -}}
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:500,100,300" rel="stylesheet">
+
 	<link rel="stylesheet" type="text/css" media="screen" href="/css/normalize.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
-	<script src="main.js"></script>
+
+	{{- if and (isset .Site.Params "social") (isset .Site.Params "feathericonscdn") (eq .Site.Params.featherIconsCDN true) -}}
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	{{- else if (isset .Site.Params "social") -}}
+	<script src="/js/feather.min.js"></script>
+	{{- end -}}
+	<script src="/js/main.js"></script>
 </head>

@@ -122,7 +122,7 @@ ul.flat {
 ul.flat li {
     display: inline-block;
     list-style: none;
-    margin-left: 0
+	margin-left: 0
 }
 
 .prevent-collapse {
@@ -139,6 +139,10 @@ ul.flat li {
 
 ul {
     list-style: disc inside
+}
+
+.post ul li {
+	margin-bottom: 10px;
 }
 
 .highlight pre {
@@ -199,6 +203,21 @@ ul {
     margin-right: 10px;
     margin-top: 10px;
     text-transform: capitalize;
+}
+
+.header .site-description {
+	display: flex;
+	justify-content: space-between;
+}
+
+.header .site-description nav {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+.header .site-description nav ul svg {
+	max-height: 15px;
 }
 
 .section .section-header {
