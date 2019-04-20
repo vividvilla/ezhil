@@ -1,5 +1,5 @@
 ---
-title: "Typography of Mine theme"
+title: "Typography"
 date: 2018-03-18T12:13:38+05:30
 ---
 

@@ -4,10 +4,11 @@ Clean and minimal personal blog and portfolio theme for Hugo.
 # Demo
 [View demo](https://ezhil-hugo.netlify.com/)
 
-![Screenshot](media/ezhil.png "Ezhil")
+![Screenshot](images/screenshot.png "Ezhil")
 
 # Features
 * Clean and minimal
+* Responsive
 * Supports tags
 * Social media links
 * Google Analytics integration

@@ -13,7 +13,7 @@ disqusShortname = "localhost"
 [params]
 	subtitle = "Clean and minimal personal [blog theme for Hugo](https://github.com/vividvilla/ezhil)"
 	# Number of posts to show in recent posts list.
-	recentPostsCount = 10
+	recentPostsCount = 3
 	# Content types which are excluded from recent posts and archive page.
 	excludedTypes = ["page"]
 	disableDisqusTypes = ["page"]
