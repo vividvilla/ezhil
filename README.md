@@ -1,6 +1,9 @@
 # Ezhil
 Clean and minimal personal blog and portfolio theme for Hugo.
 
+# Demo
+[View demo](https://ezhil-hugo.netlify.com/)
+
 ![Screenshot](media/ezhil.png "Ezhil")
 
 # Features
