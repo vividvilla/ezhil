@@ -123,3 +123,4 @@ You can also disable Disqus for certain content types by using site param `disab
 
 # Credits
 * [Feather Icons](https://feathericons.com/)
+* [Zen habits](https://zenhabits.net/) for demo content
