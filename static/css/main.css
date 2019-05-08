@@ -145,6 +145,10 @@ ul {
 	margin-bottom: 10px;
 }
 
+.post ul li p {
+    display: inline;
+}
+
 .highlight pre {
     margin-bottom: 0;
 	margin-top: 0;
