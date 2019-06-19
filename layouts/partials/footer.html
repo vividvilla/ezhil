@@ -3,3 +3,8 @@
 		<div><a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="gohugo.io">Hugo</a></div>
 	</nav>
 </div>
+
+{{ template "_internal/google_analytics_async.html" . }}
+{{- with .Site.Params.Social -}}
+<script>feather.replace()</script>
+{{- end -}}
