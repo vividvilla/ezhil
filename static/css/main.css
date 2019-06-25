@@ -208,6 +208,25 @@ ul {
     text-transform: capitalize;
 }
 
+.header .site-title {
+  display: flex;
+  justify-content: space-beween;
+}
+
+.header .site-title nav {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.header .site-title nav ul svg {
+	max-height: 15px;
+}
+
+.site-title nav ul svg {
+	max-height: 15px;
+}
+
 .header .site-description {
 	display: flex;
 	justify-content: space-between;
@@ -222,6 +241,7 @@ ul {
 .header .site-description nav ul svg {
 	max-height: 15px;
 }
+
 
 .section .section-header {
 	font-size: 0.75rem;
