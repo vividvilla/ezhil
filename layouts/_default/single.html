@@ -2,34 +2,43 @@
 <html>
 {{ partial "header.html" . }}
 <body>
-	<div class="container wrapper post">
-		{{ partial "head.html" . }}
+  <div class="container wrapper post">
+    {{ partial "head.html" . }}
 
-		<div class="post-header">
-			<h1 class="title">{{ .Title }}</h1>
-			<div class="meta">Posted at &mdash; {{ dateFormat "Jan 2, 2006" .Date }}</div>
-		</div>
+    <div class="post-header">
+      <h1 class="title">{{ .Title }}</h1>
 
-		<div class="markdown">
-			{{ .Content }}
-		</div>
+      {{ if isset .Params "mins" }}
+        <div class="meta">
+          Posted on {{ dateFormat "Jan 2, 2006" .Date }} &mdash; {{ .Params.mins }} mins read
+        </div>
+      {{ else }}
+        <div class="meta">
+          Posted on {{ dateFormat "Jan 2, 2006" .Date }}
+        </div>
+      {{ end }}
+    </div>
 
-		{{- $.Scratch.Set "isDisqus" true -}}
+    <div class="markdown">
+      {{ .Content }}
+    </div>
 
-		{{- if and (isset .Params "type") (in (.Site.Params.disableDisqusTypes | default (slice "page")) .Params.type) -}}
-		{{- $.Scratch.Set "isDisqus" false -}}
-		{{- end -}}
+    {{- $.Scratch.Set "isDisqus" true -}}
 
-		{{- if and (isset .Params "disqus") (eq .Params.disqus false) -}}
-		{{- $.Scratch.Set "isDisqus" false -}}
-		{{- else if and (isset .Params "disqus") (eq .Params.disqus true) -}}
-		{{- $.Scratch.Set "isDisqus" true -}}
-		{{- end -}}
+    {{- if and (isset .Params "type") (in (.Site.Params.disableDisqusTypes | default (slice "page")) .Params.type) -}}
+    {{- $.Scratch.Set "isDisqus" false -}}
+    {{- end -}}
 
-		{{- if eq ($.Scratch.Get "isDisqus") true -}}
-		{{- partial "disqus.html" . -}}
-		{{- end -}}
-	</div>
-	{{ partial "footer.html" . }}
+    {{- if and (isset .Params "disqus") (eq .Params.disqus false) -}}
+    {{- $.Scratch.Set "isDisqus" false -}}
+    {{- else if and (isset .Params "disqus") (eq .Params.disqus true) -}}
+    {{- $.Scratch.Set "isDisqus" true -}}
+    {{- end -}}
+
+    {{- if eq ($.Scratch.Get "isDisqus") true -}}
+    {{- partial "disqus.html" . -}}
+    {{- end -}}
+  </div>
+  {{ partial "footer.html" . }}
 </body>
 </html>
