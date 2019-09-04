@@ -11,7 +11,7 @@
 			</h2>
 			<div class="posts">
 				{{- $.Scratch.Set "counter" 0 -}}
-				{{- range .Data.Pages -}}
+				{{- range .Site.RegularPages -}}
 				{{- if (in (.Site.Params.excludedTypes | default (slice "page")) .Type) -}}
 				{{- else -}}
 				{{- if lt ($.Scratch.Get "counter") (.Site.Params.RecentPostsCount | default 10) -}}

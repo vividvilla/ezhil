@@ -13,7 +13,7 @@
 		{{ end }}
 
 		<ul class="posts">
-			{{- range .Data.Pages -}}
+			{{- range .Site.RegularPages -}}
 			{{- if (in (.Site.Params.excludedTypes | default (slice "page")) .Type) -}}
 			{{- else -}}
 			<li class="post">
