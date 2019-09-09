@@ -64,6 +64,10 @@ blockquote cite {
     opacity: .8
 }
 
+blockquote em {
+    font-weight: 600;
+}
+
 a,a:hover {
     color: #a00;
     text-decoration: none
