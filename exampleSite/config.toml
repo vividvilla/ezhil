@@ -12,7 +12,6 @@ googleAnalytics = "UA-123-45"
 disqusShortname = "localhost"
 
 [params]
-	mainSections = ["posts"]
 	subtitle = "Clean and minimal personal [blog theme for Hugo](https://github.com/vividvilla/ezhil)"
 	disableDisqusTypes = ["page"]
 	featherIconsCDN = true
