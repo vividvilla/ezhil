@@ -16,7 +16,7 @@
 
 		{{- $.Scratch.Set "isDisqus" true -}}
 
-		{{- if and (isset .Params "type") (in (.Site.Params.disableDisqusTypes | default (slice "page")) .Params.type) -}}
+		{{- if and (isset .Params "type") (in .Site.Params.disableDisqusTypes .Params.type) -}}
 		{{- $.Scratch.Set "isDisqus" false -}}
 		{{- end -}}
 

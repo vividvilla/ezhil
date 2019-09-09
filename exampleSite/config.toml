@@ -2,6 +2,7 @@ baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "Ezhil"
 theme = "ezhil"
+paginate = 5
 
 pygmentsstyle = "vs"
 pygmentscodefences = true
@@ -11,11 +12,8 @@ googleAnalytics = "UA-123-45"
 disqusShortname = "localhost"
 
 [params]
+	mainSections = ["posts"]
 	subtitle = "Clean and minimal personal [blog theme for Hugo](https://github.com/vividvilla/ezhil)"
-	# Number of posts to show in recent posts list.
-	recentPostsCount = 10
-	# Content types which are excluded from recent posts and archive page.
-	excludedTypes = ["page"]
 	disableDisqusTypes = ["page"]
 	featherIconsCDN = true
 

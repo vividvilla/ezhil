@@ -284,6 +284,34 @@ ul {
     margin-right: 15px;
 }
 
+.pagination {
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	display: flex;
+	justify-content: space-between;
+}
+
+.pagination li {
+	list-style: none;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+
+.pagination .page-prev {
+	margin-right: 20px;
+	padding-right: 20px;
+}
+
+.pagination .page-item.page-prev {
+	text-align: left;
+}
+
+.pagination .page-item.page-next {
+	text-align: right;
+}
+
 @media (max-width: 767px) {
 	body {
 		padding: 20px;
