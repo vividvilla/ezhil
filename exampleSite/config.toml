@@ -15,6 +15,7 @@ disqusShortname = "localhost"
 	subtitle = "Clean and minimal personal [blog theme for Hugo](https://github.com/vividvilla/ezhil)"
 	disableDisqusTypes = ["page"]
 	featherIconsCDN = true
+	# customCSS = ["css/mycustom.css"]
 
 [[menu.main]]
 name = "Home"

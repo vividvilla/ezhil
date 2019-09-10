@@ -61,6 +61,8 @@ paginate = 10
     disableDisqusTypes = ["page"]
     # If social media links are enabled then enable this to fetch icons from CDN instead of hosted on your site.
     featherIconsCDN = true
+	# Path to custom CSS overrides. (Optional).
+	customCSS = ["/path/to/my.css"]
 
 # Main menu which appears below site header.
 [[menu.main]]
