@@ -13,6 +13,19 @@ a, a:hover {
     font-weight: 500;
 }
 
+a.header-anchor {
+    font-size: .85em;
+    float: left;
+    margin-left: -.87em;
+    padding-right: .23em;
+    margin-top: .125em;
+    opacity: 0;
+}
+
+h2:hover .header-anchor {
+    opacity: 1;
+}
+
 html,button,input,select,textarea {
     color: #222
 }
@@ -52,13 +65,16 @@ textarea {
 }
 
 blockquote {
-    margin-left: 1rem;
-    font-style: italic;
-    font-size: 1.4rem;
-    font-family: Georgia,bitstream charter,serif;
-    border-left: 3px solid;
-    border-color: #a00;
-    padding-left: 20px
+    margin-left: 0rem;
+    /* font-style: italic; */
+    /* font-size: 1.4rem; */
+    /* font-family: Georgia,bitstream charter,serif; */
+    /* border-left: 3px solid; */
+    border-left-width: .5rem;
+    border-left-style: solid;
+    border-color: #1e88e5;
+    padding-left: 20px;
+    background-color: #f3f5f7;
 }
 
 blockquote cite {
@@ -84,15 +100,16 @@ h1 {
 }
 
 h2 {
-    font-size: 2rem
+    font-size: 1.8rem;
+    border-bottom: 1px solid #eaecef;
 }
 
 h3 {
-    font-size: 1.6rem
+    font-size: 1.4rem
 }
 
 h4 {
-    font-size: 1.2rem
+    font-size: 1rem
 }
 
 h5 {
@@ -186,7 +203,6 @@ ul {
 }
 
 .header nav {
-	margin-top: 20px;
 	border-top: 1px solid #f4f4f4;
 }
 
@@ -209,8 +225,11 @@ ul {
 }
 
 .header .site-title {
+  font-size: 1.3em;
+  font-weight: 600;
+
   display: flex;
-  justify-content: space-beween;
+  justify-content: space-between;
 }
 
 .header .site-title nav {
@@ -259,7 +278,8 @@ ul {
 .recent-posts .posts .post .meta,
 .post .post-header .meta,
 .list .posts .post .meta {
-	font-size: 0.725rem;
+    font-size: 14px;
+    font-weight: 400;
 	color: #999;
 	margin-bottom: 4px;
 }
@@ -274,7 +294,7 @@ ul {
 
 .post .post-header .meta {
 	padding-left: 5px;
-	margin-top: 10px;
+	/* margin-top: 10px; */
 }
 
 .list .posts .post .meta {

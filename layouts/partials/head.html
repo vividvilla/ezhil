@@ -1,8 +1,6 @@
 <div class="header">
         <div class="site-title">
-          <h2>
             {{ .Site.Title }}
-          </h2>
           <nav class="nav social">
                 <ul class="flat">
                         {{- range $index, $key := .Site.Params.Social -}}
@@ -11,17 +9,6 @@
                 </ul>
           </nav>
         </div>
-	<div class="site-description">
-		<h2> Albert Ge</h2>
-		<nav class="nav social">
-			<ul class="flat">
-				{{- range $index, $key := .Site.Params.Social -}}
-				<a href="{{ $key.url }}" title="{{ $key.name }}"><i data-feather="{{ $key.icon }}"></i></a>
-				{{- end -}}
-			</ul>
-		</nav>
-	</div>
-
 	<nav class="nav">
 		<ul class="flat">
 			{{ range .Site.Menus.main }}

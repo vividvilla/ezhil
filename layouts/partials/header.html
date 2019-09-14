@@ -19,11 +19,13 @@
 
 	<link rel="stylesheet" type="text/css" media="screen" href="/css/normalize.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/table.css" />
 
 	{{- if and (isset .Site.Params "social") (isset .Site.Params "feathericonscdn") (eq .Site.Params.featherIconsCDN true) -}}
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	{{- else if (isset .Site.Params "social") -}}
 	<script src="/js/feather.min.js"></script>
 	{{- end -}}
+	<script src="/js/jquery.min.js"></script>
 	<script src="/js/main.js"></script>
 </head>

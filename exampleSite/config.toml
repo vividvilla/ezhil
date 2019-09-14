@@ -15,7 +15,7 @@ disqusShortname = "localhost"
 	# Number of posts to show in recent posts list.
 	recentPostsCount = 10
 	# Content types which are excluded from recent posts and archive page.
-	excludedTypes = ["page"]
+	excludedTypes = ["page", "about", "books"]
 	disableDisqusTypes = ["page"]
 	featherIconsCDN = true
 
