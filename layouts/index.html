@@ -10,7 +10,7 @@
 				Recent posts
 			</h2>
 			<div class="posts">
-				{{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+				{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
 				{{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}
 				{{ range $paginator.Pages }}
 				<div class="post">
