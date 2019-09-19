@@ -34,9 +34,19 @@ hr {
     padding: 0
 }
 
-audio,canvas,img,video {
-    width: 100%;
-    vertical-align: middle
+img {
+	margin: 10px auto 10px auto;
+	max-width: 100%;
+	display: block;
+}
+
+a img {
+	border:none;
+}
+
+figure {
+	margin: 0;
+	text-align: center;
 }
 
 fieldset {
@@ -108,6 +118,18 @@ h5 {
 h6 {
     font-weight: 300;
     font-size: .9rem
+}
+
+.align-center {
+	text-align: center;
+}
+
+.align-left {
+	text-align: left;
+}
+
+.align-right {
+	text-align: right;
 }
 
 .container {
