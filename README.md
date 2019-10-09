@@ -61,6 +61,8 @@ paginate = 10
     disableDisqusTypes = ["page"]
     # If social media links are enabled then enable this to fetch icons from CDN instead of hosted on your site.
     featherIconsCDN = true
+    # Specify favicon (icons/i.png maps to static/icons/i.png). No favicon if not defined.
+    favicon = "icons/myicon.png"
 
 # Main menu which appears below site header.
 [[menu.main]]
