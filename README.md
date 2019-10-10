@@ -39,6 +39,8 @@ languageCode = "en-us"
 title = "My personal blog"
 theme = "ezhil"
 
+copyright = "© Copyright notice"
+
 # Enable syntax highlighting.
 pygmentsstyle = "vs"
 pygmentscodefences = true

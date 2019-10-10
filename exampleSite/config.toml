@@ -4,6 +4,8 @@ title = "Ezhil"
 theme = "ezhil"
 paginate = 5
 
+copyright = "© Copyright notice"
+
 pygmentsstyle = "vs"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
