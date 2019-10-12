@@ -2,7 +2,7 @@ baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "Ezhil"
 theme = "ezhil"
-paginate = 5
+paginate = 3
 
 copyright = "© Copyright notice"
 
@@ -17,6 +17,7 @@ disqusShortname = "localhost"
 	subtitle = "Clean and minimal personal [blog theme for Hugo](https://github.com/vividvilla/ezhil)"
 	disableDisqusTypes = ["page"]
 	featherIconsCDN = true
+	mode = "auto" # "dark" or "auto"
 
 [[menu.main]]
 name = "Home"
