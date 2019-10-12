@@ -12,17 +12,17 @@ a, a:hover {
 }
 
 html,button,input,select,textarea {
-    color: #222
+    color: #333;
 }
 
 ::-moz-selection {
     background: #b3d4fc;
-    text-shadow: none
+    text-shadow: none;
 }
 
 ::selection {
     background: #b3d4fc;
-    text-shadow: none
+    text-shadow: none;
 }
 
 hr {
@@ -31,7 +31,7 @@ hr {
     border: 0;
     border-top: 1px solid #ccc;
     margin: 1rem 0;
-    padding: 0
+    padding: 0;
 }
 
 img {
@@ -52,11 +52,11 @@ figure {
 fieldset {
     border: 0;
     margin: 0;
-    padding: 0
+    padding: 0;
 }
 
 textarea {
-    resize: vertical
+    resize: vertical;
 }
 
 blockquote {
@@ -66,12 +66,12 @@ blockquote {
     font-family: Georgia,bitstream charter,serif;
     border-left: 3px solid;
     border-color: #a00;
-    padding-left: 20px
+    padding-left: 20px;
 }
 
 blockquote cite {
     font-size: 70%;
-    opacity: .8
+    opacity: .8;
 }
 
 blockquote em {
@@ -95,29 +95,29 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 h1 {
-    font-size: 2.75rem
+    font-size: 2.75rem;
 }
 
 h2 {
-    font-size: 2rem
+    font-size: 2rem;
 }
 
 h3 {
-    font-size: 1.6rem
+    font-size: 1.6rem;
 }
 
 h4 {
-    font-size: 1.2rem
+    font-size: 1.2rem;
 }
 
 h5 {
     font-weight: 300;
-    font-size: 1rem
+    font-size: 1rem;
 }
 
 h6 {
     font-weight: 300;
-    font-size: .9rem
+    font-size: .9rem;
 }
 
 .align-center {
@@ -133,7 +133,7 @@ h6 {
 }
 
 .container {
-    max-width: 800px
+    max-width: 800px;
 }
 
 ul {
@@ -148,7 +148,7 @@ ul.flat {
 ul.flat li {
     display: inline-block;
     list-style: none;
-	margin-left: 0
+	margin-left: 0;
 }
 
 .prevent-collapse {
@@ -156,15 +156,15 @@ ul.flat li {
 }
 
 .page-title {
-    margin: 0
+    margin: 0;
 }
 
 .smaller {
-    font-size: 70%
+    font-size: 70%;
 }
 
 ul {
-    list-style: disc inside
+    list-style: disc inside;
 }
 
 .post ul li {
@@ -179,11 +179,12 @@ ul {
     margin-bottom: 0;
 	margin-top: 0;
 	padding: 20px;
-	background-color: #FAFAFA !important;
+	background-color: transparent !important;
 }
 
 .highlight {
-    background: 0 0
+	background: 0 0;
+	background-color: #FAFAFA;
 }
 
 .wrapper {
@@ -353,19 +354,19 @@ ul {
 	}
 
 	h1 {
-		font-size: 2rem
+		font-size: 2rem;
 	}
 
 	h2 {
-		font-size: 1.6rem
+		font-size: 1.6rem;
 	}
 
 	h3 {
-		font-size: 1.2rem
+		font-size: 1.2rem;
 	}
 
 	h4 {
-		font-size: 1rem
+		font-size: 1rem;
 	}
 
 	.container {
