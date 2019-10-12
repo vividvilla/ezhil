@@ -284,6 +284,15 @@ ul {
 	margin-top: 10px;
 }
 
+.post .draft-label {
+	color: #a00;
+	text-decoration: none;
+	padding: 2px 4px;
+	border-radius: 4px;
+	margin-left: 6px;
+	background-color: #f9f2f4;
+}
+
 .list .posts .post .meta {
 	margin-bottom: 0;
 	margin-left: 5px;
