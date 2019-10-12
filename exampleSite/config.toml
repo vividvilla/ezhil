@@ -44,11 +44,6 @@ icon = "github"
 url = "https://github.com/vividvilla/ezhil"
 
 [[params.social]]
-name = "Twitter"
-icon = "twitter"
-url = "https://twitter.com/gohugoio"
-
-[[params.social]]
 name = "RSS"
 icon = "rss"
 url = "/index.xml"
