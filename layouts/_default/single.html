@@ -8,6 +8,17 @@
 		<div class="post-header">
 			<h1 class="title">{{ .Title }}</h1>
 			<div class="meta">Posted at &mdash; {{ dateFormat "Jan 2, 2006" .Date }}</div>
+			<div class="post-tags">
+				<small>
+					{{ if ne .Type "page" }}
+						{{ if gt .Params.tags 0 }}
+							{{ range .Params.tags }}
+								<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> 
+							{{ end }}
+						{{ end }}
+					{{ end }}
+				</small>
+			</div>
 		</div>
 
 		<div class="markdown">

@@ -279,6 +279,14 @@ ul {
 	margin: 0;
 }
 
+.post .post-header .post-tags {
+	padding-left: 5px;
+}
+
+.post .post-header .post-tags a {
+	margin-right: 5px;
+}
+
 .post .post-header .meta {
 	padding-left: 5px;
 	margin-top: 10px;
