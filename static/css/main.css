@@ -246,6 +246,8 @@ ul {
     margin: 0;
     padding: 0;
     border: none;
+    min-width: 50px;
+    margin-left: 15px;
 }
 
 .header .site-description nav ul svg {
@@ -355,7 +357,7 @@ ul {
     }
 
     h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     h2 {
@@ -372,11 +374,5 @@ ul {
 
     .container {
         margin-top: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        font-size: 14px;
     }
 }
