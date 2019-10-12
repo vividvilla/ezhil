@@ -2,7 +2,7 @@ baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "Ezhil"
 theme = "ezhil"
-paginate = 3
+paginate = 5
 
 copyright = "© Copyright notice"
 
