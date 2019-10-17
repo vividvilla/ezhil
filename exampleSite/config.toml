@@ -11,12 +11,13 @@ pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
 googleAnalytics = "UA-123-45"
-disqusShortname = "localhost"
+disqusShortname = "ezhil-demo"
 
 [params]
 	subtitle = "Clean and minimal personal [blog theme for Hugo](https://github.com/vividvilla/ezhil)"
 	disableDisqusTypes = ["page"]
 	featherIconsCDN = true
+	mode = "auto" # "dark" or "auto"
 
 [[menu.main]]
 name = "Home"
@@ -42,11 +43,6 @@ weight = 4
 name = "Github"
 icon = "github"
 url = "https://github.com/vividvilla/ezhil"
-
-[[params.social]]
-name = "Twitter"
-icon = "twitter"
-url = "https://twitter.com/gohugoio"
 
 [[params.social]]
 name = "RSS"

@@ -6,11 +6,13 @@ Clean and minimal personal blog and portfolio theme for Hugo.
 
 [View demo](https://ezhil-hugo.netlify.com/)
 
-![Screenshot](images/screenshot.png "Ezhil")
+![Screenshot](images/screenshot-light.png "Ezhil light theme")
+![Screenshot](images/screenshot-dark.png "Ezhil dark theme")
 
 ## Features
 
 * Clean and minimal
+* Dark mode (Auto detect from OS)
 * Responsive
 * Supports tags
 * Social media links
@@ -65,6 +67,9 @@ paginate = 10
     featherIconsCDN = true
     # Specify favicon (icons/i.png maps to static/icons/i.png). No favicon if not defined.
     favicon = "icons/myicon.png"
+    # Switch to dark mode or auto detect mode from OS (Optional).
+    # "dark" will set mode to dark and "auto" will switch to dark mode if OS is in dark mode.
+    mode = "dark" # "dark" or "auto"
 
 # Main menu which appears below site header.
 [[menu.main]]
