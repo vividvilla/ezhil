@@ -283,6 +283,10 @@ ul {
     margin: 0;
 }
 
+.post-tags a {
+	margin-right: 5px;
+}
+
 .post .post-header .meta {
     padding-left: 5px;
     margin-top: 10px;
@@ -295,6 +299,23 @@ ul {
     border-radius: 4px;
     margin-left: 6px;
     background-color: #f9f2f4;
+}
+
+.post-tags .tags li {
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+
+.post-tags .tags a {
+    display: inline-block;
+    border: 1px solid #a00;
+    border-radius: 4px;
+    padding: 0px 6px;
+    color: #a00;
+    line-height: 20px;
+    font-size: 12px;
+    text-decoration: none;
+    margin: 0 1px;
 }
 
 .list .posts .post .meta {
