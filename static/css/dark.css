@@ -1,5 +1,5 @@
 body {
-	color: #fff;
+	color: #ddd;
 	background-color: #000;
 }
 
@@ -18,15 +18,21 @@ hr {
 }
 
 blockquote {
-	border-color: #fff;
+	border-color: #ddd;
 }
 
 h1,h2,h3,h4,h5,h6 {
-	color: #fff;
+	color: #ddd;
 }
 
 a,a:hover {
-	color: #fff;
+	color: #ff7979;
+	text-decoration: none;
+}
+
+.site-description a,
+.site-description a:hover {
+	color: #ddd;
 	text-decoration: underline;
 }
 
@@ -35,8 +41,13 @@ a:hover {
 }
 
 .post-tags .tags a {
-    border: 1px solid #fff;
-    color: #fff;
+    border: 1px solid #ddd;
+	color: #ddd;
+}
+
+.site-title a {
+	color: #ddd;
+	text-decoration: none !important;
 }
 
 .header nav,
