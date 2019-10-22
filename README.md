@@ -21,6 +21,7 @@ Clean and minimal personal blog and portfolio theme for Hugo.
 * Twitter cards and opengraph tags support
 * Disqus comments
 * Hugo RSS feeds
+* Custom CSS/JS
 
 ## Installation
 
@@ -59,17 +60,33 @@ paginate = 10
 [params]
     # Blog subtitle which appears below blog title. Supports markdown.
     subtitle = "Clean and minimal personal [blog theme for Hugo](https://github.com/vividvilla/ezhil)"
+
     # Content types which are included in home page recent posts list.
     mainSections = ["posts"]
+
     # Content types which are excludes Disqus comments.
     disableDisqusTypes = ["page"]
+
     # If social media links are enabled then enable this to fetch icons from CDN instead of hosted on your site.
     featherIconsCDN = true
+
     # Specify favicon (icons/i.png maps to static/icons/i.png). No favicon if not defined.
     favicon = "icons/myicon.png"
+
     # Switch to dark mode or auto detect mode from OS (Optional).
     # "dark" will set mode to dark and "auto" will switch to dark mode if OS is in dark mode.
     mode = "dark" # "dark" or "auto"
+
+    # Custom CSS added to default styles. Files added to `static` folder is copied as it is to
+    # root by Hugo. For example if you have custom CSS file under `static/css/custom.css` then
+    # you can specify custom css path as `css/custom.css`.
+    customCSS = "css/custom.css"
+    # Custom CSS added to dark mode style.
+    customDarkCSS = "css/custom-dark.css"
+
+    # Custom list of Javascript files to load. Just like custom CSS you can place js files under
+    # `static/js` folder and specify path here as `js/script-name.js`.
+    customJS = ["js/abc.js", "js/xyz.js"]
 
 # Main menu which appears below site header.
 [[menu.main]]
