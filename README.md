@@ -88,6 +88,10 @@ paginate = 10
     # `static/js` folder and specify path here as `js/script-name.js`.
     customJS = ["js/abc.js", "js/xyz.js"]
 
+    # Specify if you want to add a 'share' and 'tweet' this post link at the bottom of every post
+    sharePost = true  # or false (default)
+
+
 # Main menu which appears below site header.
 [[menu.main]]
 name = "Home"
