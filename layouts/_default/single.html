@@ -30,6 +30,10 @@
 
 		{{- $.Scratch.Set "isDisqus" true -}}
 
+		{{- if (in .Site.Params.disableDisqusTypes .Type) -}}
+		{{- $.Scratch.Set "isDisqus" false -}}
+		{{- end -}}
+
 		{{- if and (isset .Params "type") (in .Site.Params.disableDisqusTypes .Params.type) -}}
 		{{- $.Scratch.Set "isDisqus" false -}}
 		{{- end -}}
