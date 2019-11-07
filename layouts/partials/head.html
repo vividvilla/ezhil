@@ -1,5 +1,5 @@
 <div class="header">
-	<h1 class="site-title"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
+	<h1 class="site-title"><a href="{{ absLangURL "/" }}">{{ .Site.Title }}</a></h1>
 	<div class="site-description">
 		{{- if isset .Site.Params "subtitle" -}}
 		<h2>{{ .Site.Params.Subtitle | markdownify }}</h2>
@@ -14,11 +14,16 @@
 	</div>
 
 	<nav class="nav">
-		<ul class="flat">
+		<ul class="flat" style="text-align:left;">
 			{{ range .Site.Menus.main }}
 			<li>
-				<a href="{{ .URL }}">{{ .Name }}</a>
+				<a href="{{ .URL | absLangURL }}">{{ .Name }}</a>
 			</li>
+			{{ end }}
+			{{ if .IsTranslated }}
+			{{ range .Tranlations }}
+			<li style="float:right;"><a href="{{ .Permalink }}">{{ .Lang }}</a></li>
+			{{ end }}
 			{{ end }}
 		</ul>
 	</nav>
