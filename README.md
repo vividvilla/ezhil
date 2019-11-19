@@ -45,7 +45,7 @@ theme = "ezhil"
 copyright = "© Copyright notice"
 
 # Enable syntax highlighting.
-pygmentsstyle = "vs"
+pygmentsstyle = "solarized-dark"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
