@@ -28,6 +28,19 @@
 			{{ end }}
 		</div>
 
+		{{- if ne .Type "page" -}}
+			{{- if (eq .Site.Params.sharePost true) -}}
+			<div class="post-share">
+				If this article was helpful 
+				<a onclick="window.open({{ printf "https://twitter.com/share?text=%s&amp;url=%s" .Title .Permalink }}, 'share-twitter', 'width=550,height=235');return false;">tweet it</a>
+				or 
+				<a onclick="window.open({{ printf "https://www.facebook.com/sharer/sharer.php?u=%s" .Permalink }}, 'share-facebook', 'width=580,height=296')">share it</a>.
+			</div>
+			{{- end -}}
+		{{- end -}}
+
+
+
 		{{- $.Scratch.Set "isDisqus" true -}}
 
 		{{- if and (isset .Params "type") (in .Site.Params.disableDisqusTypes .Params.type) -}}

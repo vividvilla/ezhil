@@ -21,6 +21,7 @@ disqusShortname = "ezhil-demo"
 	# customCSS = "css/custom.css"  # Custom CSS applied to default styles.
 	# customDarkCSS = "css/custom-dark.css"  # Custom styles applied to dark mode css.
 	# customJS = ["js/custom.js", "js/custom1.js"]  # Custom JS scripts.
+	sharePost = true
 
 [[menu.main]]
 name = "Home"
