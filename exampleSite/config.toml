@@ -16,6 +16,7 @@ disqusShortname = "ezhil-demo"
 [params]
 	subtitle = "Clean and minimal personal [blog theme for Hugo](https://github.com/vividvilla/ezhil)"
 	disableDisqusTypes = ["page"]
+	# disqus = false
 	featherIconsCDN = true
 	mode = "auto" # "dark", "auto", "light"
 	# customCSS = "css/custom.css"  # Custom CSS applied to default styles.

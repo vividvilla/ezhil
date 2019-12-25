@@ -66,6 +66,8 @@ paginate = 10
 
     # Content types which are excludes Disqus comments.
     disableDisqusTypes = ["page"]
+    # disable Disqus globally
+    # disqus = false
 
     # If social media links are enabled then enable this to fetch icons from CDN instead of hosted on your site.
     featherIconsCDN = true
@@ -142,7 +144,9 @@ This is some static page where you can write about yourself.
 
 ## Disable Disqus
 
-You can disable Disqus from contents selectively or for all contents with certain content type. Use content field `disqus` to disable Disqus from certain contents.
+You can disable Disqus from contents selectively, for all contents with a certain content type, or globally.
+
+Use content field `disqus` to disable Disqus from certain contents.
 
 ```md
 ---
@@ -155,6 +159,8 @@ This is a content without Disqus comments.
 ```
 
 You can also disable Disqus for certain content types by using site param `disableDisqusTypes`. You can check config section above for example.
+
+Finally, you can disable disqus globally by setting `disqus: false` under the site parameters.
 
 ## Credits
 
