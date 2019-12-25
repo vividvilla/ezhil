@@ -34,6 +34,10 @@
 		{{- $.Scratch.Set "isDisqus" false -}}
 		{{- end -}}
 
+		{{- if (eq .Site.Params.disqus false) -}}
+		{{- $.Scratch.Set "isDisqus" false -}}
+		{{- end -}}
+
 		{{- if and (isset .Params "disqus") (eq .Params.disqus false) -}}
 		{{- $.Scratch.Set "isDisqus" false -}}
 		{{- else if and (isset .Params "disqus") (eq .Params.disqus true) -}}
