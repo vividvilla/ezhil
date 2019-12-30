@@ -4,7 +4,9 @@
 	</nav>
 </div>
 
+{{ if not .Site.IsServer }}
 {{ template "_internal/google_analytics_async.html" . }}
+{{ end }}
 {{- with .Site.Params.Social -}}
 <script>feather.replace()</script>
 {{- end -}}
