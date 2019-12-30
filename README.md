@@ -142,7 +142,7 @@ This is some static page where you can write about yourself.
 
 ## Disable Disqus
 
-You can disable Disqus from contents selectively or for all contents with certain content type. Use content field `disqus` to disable Disqus from certain contents.
+You can disable Disqus site wide if you don't set `DisqusShortname` param in config. You can also disable Disqus from contents selectively or for all contents with certain content type. Use content field `disqus` to disable Disqus from certain contents.
 
 ```md
 ---
