@@ -85,8 +85,9 @@ paginate = 10
     customDarkCSS = "css/custom-dark.css"
 
     # Custom list of Javascript files to load. Just like custom CSS you can place js files under
-    # `static/js` folder and specify path here as `js/script-name.js`.
-    customJS = ["js/abc.js", "js/xyz.js"]
+    # `static/js` folder and specify path here as `js/script-name.js`. You can also specify full url,
+    # for example you may want to include external JS library.
+    customJS = ["js/abc.js", "js/xyz.js", "https://code.jquery.com/jquery-3.4.1.js"]
 
 # Main menu which appears below site header.
 [[menu.main]]

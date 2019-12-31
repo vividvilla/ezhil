@@ -42,7 +42,11 @@
 	<script src="{{ .Site.BaseURL }}js/main.js"></script>
 	{{- if isset .Site.Params "customjs" -}}
 	{{- range .Site.Params.customJS }}
+	{{- if or (hasPrefix . "http://") (hasPrefix . "https://") }}
+	<script src="{{ . }}"></script>
+	{{- else }}
 	<script src="{{ $.Site.BaseURL }}{{ . }}"></script>
+	{{- end }}
 	{{- end }}
 	{{- end }}
 </head>
