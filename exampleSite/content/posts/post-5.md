@@ -73,3 +73,18 @@ Ordered list
 1.	Red
 2.  Green
 3.  Blue
+
+## Tables
+
+Tables aren't part of the core Markdown spec, but Hugo supports supports them out-of-the-box.
+
+   Name | Age
+--------|------
+    Bob | 27
+  Alice | 23
+
+#### Inline Markdown within tables
+
+| Inline&nbsp;&nbsp;&nbsp;     | Markdown&nbsp;&nbsp;&nbsp;  | In&nbsp;&nbsp;&nbsp;                | Table      |
+| ---------- | --------- | ----------------- | ---------- |
+| *italics*  | **bold**  | ~~strikethrough~~&nbsp;&nbsp;&nbsp; | `code`     |
