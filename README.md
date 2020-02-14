@@ -57,6 +57,9 @@ disqusShortname = "localhost"
 # Number of posts to show in recent posts list (Optional). Defaults to 10.
 paginate = 10
 
+# Number of characters to show in summary.
+summaryLength = 20
+
 [params]
     # Blog subtitle which appears below blog title. Supports markdown.
     subtitle = "Clean and minimal personal [blog theme for Hugo](https://github.com/vividvilla/ezhil)"

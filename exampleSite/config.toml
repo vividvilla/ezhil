@@ -13,6 +13,8 @@ pygmentscodefencesguesssyntax = true
 googleAnalytics = "UA-123-45"
 disqusShortname = "ezhil-demo"
 
+summaryLength = 20
+
 [params]
 	subtitle = "Clean and minimal personal [blog theme for Hugo](https://github.com/vividvilla/ezhil)"
 	disableDisqusTypes = ["page"]
