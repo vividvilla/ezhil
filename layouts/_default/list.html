@@ -12,6 +12,8 @@
 			<h1 class="page-title">All articles</h1>
 		{{ end }}
 
+		{{ with .Content }}{{ . }}{{ end }}
+
 		<ul class="posts">
 			{{- range .Data.Pages -}}
 			{{- if (in (.Site.Params.excludedTypes | default (slice "page")) .Type) -}}
