@@ -5,6 +5,8 @@
 	<div class="container wrapper">
 		{{ partial "head.html" . }}
 
+		{{ with .Content }}{{ . }}{{ end }}
+
 		<div class="recent-posts section">
 			<h2 class="section-header">
 				Recent posts
