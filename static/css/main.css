@@ -191,6 +191,11 @@ ul {
     background-color: #FAFAFA;
 }
 
+pre code {
+  display: inline-block;
+}
+  
+
 .wrapper {
     max-width: 760px;
     margin: 0 auto;

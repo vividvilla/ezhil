@@ -67,3 +67,7 @@ table th, table td {
     padding: 10px 20px;
     border: 1px solid #666;
 }
+
+pre code {
+  display: inline-block
+}
