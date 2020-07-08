@@ -58,7 +58,7 @@ disqusShortname = "localhost"
 # Number of posts to show in recent posts list (Optional). Defaults to 10.
 paginate = 10
 
-# Number of characters to show in summary.
+# Number of characters to show in summary. You may also need to set `hasCJKLanguage` to `true` to make it work.
 summaryLength = 20
 
 [params]
