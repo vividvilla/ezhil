@@ -10,6 +10,12 @@
 			<div class="meta">Posted at &mdash; {{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</div>
 		</div>
 
+        {{ if or (and .Site.Params.tocMinWordCount (gt .WordCount .Site.Params.tocMinWordCount )) (.Params.toc) }}
+		<div class="post-header">
+            {{ .TableOfContents }}
+		</div>
+        {{ end }}
+
 		<div class="markdown">
 			{{ .Content }}
 		</div>

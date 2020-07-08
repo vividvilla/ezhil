@@ -22,6 +22,7 @@ Clean and minimal personal blog and portfolio theme for Hugo.
 * Disqus comments
 * Hugo RSS feeds
 * Custom CSS/JS
+* Table of contens
 
 ## Installation
 
@@ -159,6 +160,30 @@ This is a content without Disqus comments.
 ```
 
 You can also disable Disqus for certain content types by using site param `disableDisqusTypes`. You can check config section above for example.
+
+# Table of contents
+
+You can enable table of contents by add field `toc` in your content. You can also enable TOC by using site param `tocMinWordCount`.
+
+```md
+---
+title: "Content with toc"
+date: 2019-04-19T21:37:58+05:30
+toc: true
+---
+
+There will be a TOC above this contents.
+
+# Topic 1
+
+Some contents.
+
+# Topic 2
+
+Other contents.
+
+```
+
 
 ## Credits
 
