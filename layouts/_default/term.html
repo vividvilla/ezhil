@@ -5,11 +5,29 @@
 <body>
 	<div class="container wrapper tags">
 		{{ partial "head.html" . }}
+		
+        {{ if isset .Data "Term" }}
+			<h1>Entries tagged - "{{ .Data.Term }}"</h1>
+		{{ else }}
+			<h1 class="page-title">All tags</h1>
+		{{ end }}
 
-		<h1 class="page-title">All tags</h1>
+		{{ with .Content }}{{ . }}{{ end }}
+
+		<ul class="posts">
+			{{- range .Data.Pages -}}
+			{{- if (in (.Site.Params.excludedTypes | default (slice "page")) .Type) -}}
+			{{- else -}}
+			<li class="post">
+				<a href="{{ .RelPermalink }}">{{.Title}}</a> <span class="meta">{{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</span>
+			</li>
+			{{- end -}}
+			{{- end -}}
+		</ul>
 	</div>
 
 	{{ partial "footer.html" . }}
 </body>
 
 </html>
+
