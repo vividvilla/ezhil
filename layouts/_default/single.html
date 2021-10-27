@@ -17,6 +17,21 @@
           Posted on {{ dateFormat "Jan 2, 2006" .Date }}
         </div>
       {{ end }}
+      {{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}
+    </div>
+
+    <div class="post-tags">
+      {{ if ne .Type "page" }}
+        {{ if gt .Params.tags 0 }}
+          <nav class="nav tags">
+              <ul class="flat">
+                {{ range .Params.tags }}
+                <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+                {{ end }}
+              </ul>
+          </nav>
+        {{ end }}
+      {{ end }}
     </div>
 
     <div class="markdown">
@@ -25,15 +40,22 @@
 
     {{- $.Scratch.Set "isDisqus" true -}}
 
-    {{- if and (isset .Params "type") (in (.Site.Params.disableDisqusTypes | default (slice "page")) .Params.type) -}}
+    <!-- Disable if content type is excluded in config -->
+    {{- if and (isset .Params "type") (in .Site.Params.disableDisqusTypes .Params.type) -}}
     {{- $.Scratch.Set "isDisqus" false -}}
     {{- end -}}
 
+    <!-- Check if content has flag to enable/disable disqus explicitly -->
     {{- if and (isset .Params "disqus") (eq .Params.disqus false) -}}
     {{- $.Scratch.Set "isDisqus" false -}}
     {{- else if and (isset .Params "disqus") (eq .Params.disqus true) -}}
     {{- $.Scratch.Set "isDisqus" true -}}
     {{- end -}}
+
+    <!-- Check if disqus short name is given -->
+    {{ if not .Site.DisqusShortname }}
+    {{- $.Scratch.Set "isDisqus" false -}}
+    {{ end }}
 
     {{- if eq ($.Scratch.Get "isDisqus") true -}}
     {{- partial "disqus.html" . -}}

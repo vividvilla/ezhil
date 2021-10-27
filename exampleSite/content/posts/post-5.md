@@ -5,7 +5,6 @@ date: 2018-03-18T12:13:38+05:30
 
 Lid est laborum et dolorum fuga. Et harum quidem rerum facilis est et expeditasi distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihilse impedit quo minus id quod amets untra dolor amet sad. Sed ut perspser iciatis unde omnis iste natus error sit voluptatem accusantium doloremque laste. Dolores sadips ipsums sits.
 
-
 # Heading 1
 
 Lid est laborum et dolorum fuga. Et harum quidem rerum facilis est et expeditasi distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihilse impedit quo minus id quod amets untra dolor amet sad. Sed ut perspser iciatis unde omnis iste natus error sit voluptatem accusantium doloremque laste. Dolores sadips ipsums sits.
@@ -56,9 +55,12 @@ func setCookie(cookie *http.Cookie, w interface{}) error {
 }
 ```
 
-This is blockquote, Will make it better now
+This is blockquote, Will make it *better now*
 
 > 'I want to do with you what spring does with the cherry trees.' <cite>cited ~Pablo Neruda</cite>*
+
+
+> Et harum quidem *rerum facilis* est et expeditasi distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihilse impedit
 
 Unordered list
 
@@ -71,3 +73,18 @@ Ordered list
 1.	Red
 2.  Green
 3.  Blue
+
+## Tables
+
+Tables aren't part of the core Markdown spec, but Hugo supports supports them out-of-the-box.
+
+   Name | Age
+--------|------
+    Bob | 27
+  Alice | 23
+
+#### Inline Markdown within tables
+
+| Inline&nbsp;&nbsp;&nbsp;     | Markdown&nbsp;&nbsp;&nbsp;  | In&nbsp;&nbsp;&nbsp;                | Table      |
+| ---------- | --------- | ----------------- | ---------- |
+| *italics*  | **bold**  | ~~strikethrough~~&nbsp;&nbsp;&nbsp; | `code`     |
