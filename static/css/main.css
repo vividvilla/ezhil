@@ -194,7 +194,7 @@ ul {
 pre code {
   display: inline-block;
 }
-  
+
 
 .wrapper {
     max-width: 760px;
@@ -255,7 +255,6 @@ pre code {
     padding: 0;
     border: none;
     min-width: 50px;
-    margin-left: 15px;
 }
 
 .header .site-description nav ul svg {
@@ -296,7 +295,6 @@ pre code {
 }
 
 .post .post-header .meta {
-    padding-left: 5px;
     margin-top: 10px;
 }
 
