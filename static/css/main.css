@@ -27,17 +27,17 @@ h2:hover .header-anchor {
 }
 
 html,button,input,select,textarea {
-    color: #222
+    color: #333;
 }
 
 ::-moz-selection {
     background: #b3d4fc;
-    text-shadow: none
+    text-shadow: none;
 }
 
 ::selection {
     background: #b3d4fc;
-    text-shadow: none
+    text-shadow: none;
 }
 
 hr {
@@ -46,22 +46,32 @@ hr {
     border: 0;
     border-top: 1px solid #ccc;
     margin: 1rem 0;
-    padding: 0
+    padding: 0;
 }
 
-audio,canvas,img,video {
-    width: 100%;
-    vertical-align: middle
+img {
+    margin: 10px auto 10px auto;
+    max-width: 100%;
+    display: block;
+}
+
+a img {
+    border:none;
+}
+
+figure {
+    margin: 0;
+    text-align: center;
 }
 
 fieldset {
     border: 0;
     margin: 0;
-    padding: 0
+    padding: 0;
 }
 
 textarea {
-    resize: vertical
+    resize: vertical;
 }
 
 blockquote {
@@ -79,7 +89,11 @@ blockquote {
 
 blockquote cite {
     font-size: 70%;
-    opacity: .8
+    opacity: .8;
+}
+
+blockquote em {
+    font-weight: 600;
 }
 
 a:hover {
@@ -113,32 +127,42 @@ h4 {
 }
 
 h5 {
-    font-weight: 300;
-    font-size: 1rem
+    font-size: 1rem;
 }
 
 h6 {
-    font-weight: 300;
-    font-size: .9rem
+    font-size: .9rem;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.align-right {
+    text-align: right;
 }
 
 .container {
-    max-width: 800px
+    max-width: 800px;
 }
 
 ul {
-	padding-left: 15px;
+    padding-left: 15px;
 }
 
 ul.flat {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 ul.flat li {
     display: inline-block;
     list-style: none;
-	margin-left: 0
+    margin-left: 0;
 }
 
 .prevent-collapse {
@@ -146,19 +170,24 @@ ul.flat li {
 }
 
 .page-title {
-    margin: 0
+    margin: 0;
 }
 
 .smaller {
-    font-size: 70%
+    font-size: 70%;
 }
 
 ul {
-    list-style: disc inside
+    list-style: disc inside;
+}
+
+.site-title a {
+	color: #333;
+	text-decoration: none !important;
 }
 
 .post ul li {
-	margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .post ul li p {
@@ -167,27 +196,33 @@ ul {
 
 .highlight pre {
     margin-bottom: 0;
-	margin-top: 0;
-	padding: 20px;
-	background-color: #FAFAFA !important;
+    margin-top: 0;
+    padding: 20px;
+    background-color: transparent !important;
 }
 
 .highlight {
-    background: 0 0
+    background: 0 0;
+    background-color: #FAFAFA;
 }
 
+pre code {
+  display: inline-block;
+}
+  
+
 .wrapper {
-	max-width: 760px;
-	margin: 0 auto;
+    max-width: 760px;
+    margin: 0 auto;
 }
 
 .container {
-	margin-top: 50px;
+    margin-top: 50px;
 }
 
 .header {
-	margin-bottom: 20px;
-	padding-bottom: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 .header h1,
@@ -203,16 +238,17 @@ ul {
 }
 
 .header nav {
-	border-top: 1px solid #f4f4f4;
+    margin-top: 20px;
+    border-top: 1px solid #f4f4f4;
 }
 
 .header nav ul,
 .header nav li {
-	margin: 0;
+    margin: 0;
 }
 
 .header nav ul.flat {
-	padding: 0;
+    padding: 0;
 }
 
 .header nav ul.flat li {
@@ -247,32 +283,34 @@ ul {
 }
 
 .header .site-description {
-	display: flex;
-	justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .header .site-description nav {
-	margin: 0;
-	padding: 0;
-	border: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    min-width: 50px;
+    margin-left: 15px;
 }
 
 .header .site-description nav ul svg {
-	max-height: 15px;
+    max-height: 15px;
 }
 
 
 .section .section-header {
-	font-size: 0.75rem;
-	font-weight: 600;
-	text-transform: uppercase;
-	color: #999;
-	margin-bottom: 20px;
-	letter-spacing: 1px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
 }
 
 .recent-posts .posts .post {
-	margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 .recent-posts .posts .post .meta,
@@ -285,28 +323,58 @@ ul {
 }
 
 .post .post-header {
-	margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 .post .post-header .title {
-	margin: 0;
+    margin: 0;
+}
+
+.post-tags a {
+	margin-right: 5px;
 }
 
 .post .post-header .meta {
-	padding-left: 5px;
-	/* margin-top: 10px; */
+    padding-left: 5px;
+    /* margin-top: 10px; */
+}
+
+.post .draft-label {
+    color: #a00;
+    text-decoration: none;
+    padding: 2px 4px;
+    border-radius: 4px;
+    margin-left: 6px;
+    background-color: #f9f2f4;
+}
+
+.post-tags .tags li {
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+
+.post-tags .tags a {
+    display: inline-block;
+    border: 1px solid #a00;
+    border-radius: 4px;
+    padding: 0px 6px;
+    color: #a00;
+    line-height: 20px;
+    font-size: 12px;
+    text-decoration: none;
+    margin: 0 1px;
 }
 
 .list .posts .post .meta {
-	margin-bottom: 0;
-	margin-left: 5px;
+    margin-bottom: 0;
+    margin-left: 5px;
 }
 
 .footer {
-	text-align: right;
-	font-size: 0.75em;
-	color: #999;
-	border-top: 1px solid #f4f4f4;
+    text-align: right;
+    font-size: 0.75em;
+    color: #999;
+    border-top: 1px solid #f4f4f4;
     padding: 20px 0;
     margin-top: 40px;
 }
@@ -323,34 +391,65 @@ ul {
     margin-right: 15px;
 }
 
-@media (max-width: 767px) {
-	body {
-		padding: 20px;
-	}
-
-	h1 {
-		font-size: 2rem
-	}
-
-	h2 {
-		font-size: 1.6rem
-	}
-
-	h3 {
-		font-size: 1.2rem
-	}
-
-	h4 {
-		font-size: 1rem
-	}
-
-	.container {
-		margin-top: 10px;
-	}
+.pagination {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
 }
 
-@media (max-width: 480px) {
-	body {
-		font-size: 14px;
-	}
+.pagination li {
+    list-style: none;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.pagination .page-prev {
+    margin-right: 20px;
+    padding-right: 20px;
+}
+
+.pagination .page-item.page-prev {
+    text-align: left;
+}
+
+.pagination .page-item.page-next {
+    text-align: right;
+}
+
+table th {
+    background-color: #f4f4f4;
+}
+
+table th, table td {
+    padding: 10px 20px;
+    border: 1px solid #dddddd;
+}
+
+@media (max-width: 767px) {
+    body {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    h4 {
+        font-size: 1rem;
+    }
+
+    .container {
+        margin-top: 10px;
+    }
 }

@@ -2,22 +2,27 @@ baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "Ezhil"
 theme = "ezhil"
+paginate = 5
 
-pygmentsstyle = "vs"
+copyright = "© Copyright notice"
+
+pygmentsstyle = "solarized-dark"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
 googleAnalytics = "UA-123-45"
-disqusShortname = "localhost"
+disqusShortname = "ezhil-demo"
+
+summaryLength = 20
 
 [params]
 	subtitle = "Clean and minimal personal [blog theme for Hugo](https://github.com/vividvilla/ezhil)"
-	# Number of posts to show in recent posts list.
-	recentPostsCount = 10
-	# Content types which are excluded from recent posts and archive page.
-	excludedTypes = ["page", "about", "books"]
 	disableDisqusTypes = ["page"]
 	featherIconsCDN = true
+	mode = "auto" # "dark", "auto", "light"
+	# customCSS = "css/custom.css"  # Custom CSS applied to default styles.
+	# customDarkCSS = "css/custom-dark.css"  # Custom styles applied to dark mode css.
+	# customJS = ["https://code.jquery.com/jquery-3.4.1.js", "js/custom1.js"]  # Custom JS scripts.
 
 [[menu.main]]
 name = "Home"
@@ -43,11 +48,6 @@ weight = 4
 name = "Github"
 icon = "github"
 url = "https://github.com/vividvilla/ezhil"
-
-[[params.social]]
-name = "Twitter"
-icon = "twitter"
-url = "https://twitter.com/gohugoio"
 
 [[params.social]]
 name = "RSS"
