@@ -8,16 +8,28 @@
     <div class="post-header">
       <h1 class="title">{{ .Title }}</h1>
 
-      {{ if isset .Params "mins" }}
-        <div class="meta">
-          Posted on {{ dateFormat "Jan 2, 2006" .Date }} &mdash; {{ .Params.mins }} mins read
-        </div>
-      {{ else }}
-        <div class="meta">
-          Posted on {{ dateFormat "Jan 2, 2006" .Date }}
-        </div>
-      {{ end }}
-      {{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}
+      <!-- Logic for various metadata notes under the Title, such as Date, "X mins read", Last Updated -->
+        <!-- hack: make "Last updated on ..." completely replace "Posted on ..." for now -->
+        {{ if isset .Params "lastupdated" }}
+          <div class="meta">
+            Last updated on {{ dateFormat "Jan 2, 2006" .Params.lastupdated }}
+          </div>
+
+        <!-- no "Last updated on..." so proceed with varieties of "Posted on ..." logic -->
+        {{ else if isset .Params "mins" }}
+          <div class="meta">
+            Posted on {{ dateFormat "Jan 2, 2006" .Date }} &mdash; {{ .Params.mins }} mins read
+          </div>
+
+        {{ else }}
+          <div class="meta">
+            Posted on {{ dateFormat "Jan 2, 2006" .Date }}
+          </div>
+        {{ end }}
+
+        {{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}
+      <!-- Metadata done -->
+
     </div>
 
     <div class="post-tags">
