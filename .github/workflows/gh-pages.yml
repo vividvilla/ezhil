@@ -24,7 +24,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Install Hugo
         run: |
@@ -40,7 +40,10 @@ jobs:
       - name: Configure Pages
         id: pages
         if: github.ref == 'refs/heads/master'
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
+        with:
+          # Turn on Pages for the repo if it isn't already.
+          enablement: true
 
       - name: Build demo site
         working-directory: exampleSite
@@ -50,7 +53,7 @@ jobs:
 
       - name: Upload artifact
         if: github.ref == 'refs/heads/master'
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: exampleSite/public
 
@@ -63,4 +66,4 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
