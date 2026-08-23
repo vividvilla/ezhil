@@ -39,7 +39,7 @@ Or without git submodules:
 git clone https://github.com/vividvilla/ezhil.git themes/ezhil
 ```
 
-For more information read the [official setup guide](https://gohugo.io/installation/) of Hugo.
+For more information read the [official setup guide](https://gohugobrasil.netlify.app/themes/installing-and-using-themes/) of Hugo.
 
 ## Configuration
 
