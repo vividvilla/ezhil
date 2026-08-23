@@ -1,0 +1,66 @@
+name: Demo site
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+# Allow GITHUB_TOKEN to deploy to GitHub Pages.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment, don't cancel in-progress production deploys.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  HUGO_VERSION: 0.165.0
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Hugo
+        run: |
+          set -euo pipefail
+          cd "$(mktemp -d)"
+          base="https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}"
+          curl -sSLO "${base}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb"
+          curl -sSLO "${base}/hugo_${HUGO_VERSION}_checksums.txt"
+          sha256sum --ignore-missing -c "hugo_${HUGO_VERSION}_checksums.txt"
+          sudo dpkg -i "hugo_extended_${HUGO_VERSION}_linux-amd64.deb"
+          hugo version
+
+      - name: Configure Pages
+        id: pages
+        if: github.ref == 'refs/heads/master'
+        uses: actions/configure-pages@v5
+
+      - name: Build demo site
+        working-directory: exampleSite
+        run: |
+          hugo --themesDir ../.. --gc --minify \
+            --baseURL "${{ steps.pages.outputs.base_url || 'http://localhost/' }}"
+
+      - name: Upload artifact
+        if: github.ref == 'refs/heads/master'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: exampleSite/public
+
+  deploy:
+    if: github.ref == 'refs/heads/master'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

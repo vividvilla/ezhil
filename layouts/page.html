@@ -1,0 +1,35 @@
+{{ define "wrapper-class" }}post{{ end }}
+{{ define "main" }}
+<div class="post-header">
+	<h1 class="title">{{ .Title }}</h1>
+	<div class="meta">Posted at &mdash; {{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</div>
+</div>
+
+<div class="markdown">
+	{{ .Content }}
+</div>
+
+{{- with .GetTerms "tags" }}
+<div class="post-tags">
+	<nav class="nav tags">
+		<ul class="flat">
+			{{- range . }}
+			<li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+			{{- end }}
+		</ul>
+	</nav>
+</div>
+{{- end }}
+
+{{- $shortname := .Site.Config.Services.Disqus.Shortname -}}
+{{- $isDisqus := ne $shortname "" -}}
+{{- if in (.Site.Params.disableDisqusTypes | default slice) .Type -}}
+{{- $isDisqus = false -}}
+{{- end -}}
+{{- if and (isset .Params "disqus") $shortname -}}
+{{- $isDisqus = .Params.disqus -}}
+{{- end -}}
+{{- if $isDisqus -}}
+{{- template "_internal/disqus.html" . -}}
+{{- end -}}
+{{ end }}

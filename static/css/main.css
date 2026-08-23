@@ -1,4 +1,8 @@
 body {
+    /* Sticky footer: content grows to fill the viewport, footer sits below it. */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     font-family: "ubuntu", sans-serif;
     font-weight: 400;
     color: #333;
@@ -183,26 +187,43 @@ ul {
     margin-bottom: 0;
     margin-top: 0;
     padding: 20px;
-    background-color: transparent !important;
 }
 
+/* Fallback only: the syntax highlighting style paints its own background. */
 .highlight {
-    background: 0 0;
     background-color: #FAFAFA;
 }
 
+code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 85%;
+    background-color: #f4f4f4;
+    border-radius: 4px;
+    padding: 0.15em 0.35em;
+}
+
 pre code {
-  display: inline-block;
+    display: inline-block;
+    font-size: 100%;
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0;
+}
+
+pre {
+    overflow-x: auto;
 }
   
 
 .wrapper {
+    width: 100%;
     max-width: 760px;
     margin: 0 auto;
 }
 
 .container {
     margin-top: 50px;
+    flex: 1 0 auto;
 }
 
 .header {
@@ -338,6 +359,7 @@ pre code {
     border-top: 1px solid #f4f4f4;
     padding: 20px 0;
     margin-top: 40px;
+    flex-shrink: 0;
 }
 
 .page-title {

@@ -1,0 +1,10 @@
+{{ define "wrapper-class" }}post{{ end }}
+{{ define "main" }}
+<div class="post-header">
+	<h1 class="title">404 &mdash; Page not found</h1>
+</div>
+
+<div class="markdown">
+	<p>The page you are looking for does not exist. <a href="{{ .Site.Home.RelPermalink }}">Head back home</a>.</p>
+</div>
+{{ end }}

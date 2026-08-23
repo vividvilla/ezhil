@@ -1,28 +1,49 @@
 baseURL = "http://example.org/"
-languageCode = "en-us"
+locale = "en-us"
 title = "Ezhil"
 theme = "ezhil"
-paginate = 5
 
 copyright = "© Copyright notice"
 
-pygmentsstyle = "solarized-dark"
-pygmentscodefences = true
-pygmentscodefencesguesssyntax = true
-
-googleAnalytics = "UA-123-45"
-disqusShortname = "ezhil-demo"
-
 summaryLength = 20
+
+[pagination]
+  pagerSize = 5
+
+# Syntax highlighting.
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup.highlight]
+  style = "solarized-dark"
+  guessSyntax = true
+  noClasses = true
+
+[services.disqus]
+  shortname = "ezhil-demo"
+
+# [services.googleAnalytics]
+#   ID = "G-XXXXXXXXXX"
 
 [params]
 	subtitle = "Clean and minimal personal [blog theme for Hugo](https://github.com/vividvilla/ezhil)"
 	disableDisqusTypes = ["page"]
 	featherIconsCDN = true
 	mode = "auto" # "dark", "auto", "light"
+	# favicon = "favicon.png"  # Path relative to the static directory.
 	# customCSS = "css/custom.css"  # Custom CSS applied to default styles.
 	# customDarkCSS = "css/custom-dark.css"  # Custom styles applied to dark mode css.
 	# customJS = ["https://code.jquery.com/jquery-3.4.1.js", "js/custom1.js"]  # Custom JS scripts.
+
+[[params.social]]
+name = "Github"
+icon = "github"
+url = "https://github.com/vividvilla/ezhil"
+
+[[params.social]]
+name = "RSS"
+icon = "rss"
+url = "/index.xml"
 
 [[menu.main]]
 name = "Home"
@@ -44,15 +65,5 @@ name = "Tags"
 url = "/tags"
 weight = 4
 
-[[params.social]]
-name = "Github"
-icon = "github"
-url = "https://github.com/vividvilla/ezhil"
-
-[[params.social]]
-name = "RSS"
-icon = "rss"
-url = "/index.xml"
-
 [taxonomies]
-   tag = "tags"
+  tag = "tags"

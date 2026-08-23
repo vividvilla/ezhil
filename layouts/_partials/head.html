@@ -1,0 +1,31 @@
+<div class="header">
+	<h1 class="site-title"><a href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a></h1>
+	<div class="site-description">
+		{{- with .Site.Params.subtitle -}}
+		<h2>{{ . | markdownify }}</h2>
+		{{- end -}}
+		{{- with .Site.Params.social -}}
+		<nav class="nav social">
+			<ul class="flat">
+				{{- range . -}}
+				{{- $url := .url -}}
+				{{- if and (hasPrefix $url "/") (not (hasPrefix $url "//")) -}}
+				{{- $url = relLangURL (strings.TrimPrefix "/" $url) -}}
+				{{- end -}}
+				<li><a href="{{ $url }}" title="{{ .name }}"><i data-feather="{{ .icon }}"></i></a></li>
+				{{- end -}}
+			</ul>
+		</nav>
+		{{- end -}}
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			{{ range .Site.Menus.main }}
+			<li>
+				<a href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+			</li>
+			{{ end }}
+		</ul>
+	</nav>
+</div>

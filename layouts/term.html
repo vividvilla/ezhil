@@ -1,0 +1,8 @@
+{{ define "wrapper-class" }}list{{ end }}
+{{ define "main" }}
+<h1 class="page-title">Entries tagged &mdash; &ldquo;{{ .Title }}&rdquo;</h1>
+
+{{ with .Content }}{{ . }}{{ end }}
+
+{{ partial "post-list.html" . }}
+{{ end }}

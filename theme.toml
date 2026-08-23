@@ -8,7 +8,7 @@ description = "Clean and minimal personal blog and portfolio theme."
 homepage = "https://github.com/vividvilla/ezhil"
 tags = ["minimal", "clean", "blog", "responsive", "personal", "simple", "minimalist", "portfolio", "dark"]
 features = ["blog", "Clean and minimal", "Responsive", "Social media links", "Syntax highlighting"]
-min_version = "0.37.0"
+min_version = "0.146.0"
 
 [author]
   name = "Vivek R"

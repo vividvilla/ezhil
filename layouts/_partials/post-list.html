@@ -1,0 +1,10 @@
+{{- $excluded := .Site.Params.excludedTypes | default (slice "page") -}}
+<ul class="posts">
+	{{- range .Pages -}}
+	{{- if not (in $excluded .Type) }}
+	<li class="post">
+		<a href="{{ .RelPermalink }}">{{ .Title }}</a> <span class="meta">{{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</span>
+	</li>
+	{{- end -}}
+	{{- end }}
+</ul>

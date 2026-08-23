@@ -4,7 +4,9 @@ Clean and minimal personal blog and portfolio theme for Hugo.
 
 ## Demo
 
-[View demo](https://ezhil-hugo.netlify.com/)
+[View demo](https://vividvilla.github.io/ezhil/)
+
+Requires Hugo **0.146.0 or newer**.
 
 ![Screenshot](images/screenshot-light.png "Ezhil light theme")
 ![Screenshot](images/screenshot-dark.png "Ezhil dark theme")
@@ -28,11 +30,16 @@ Clean and minimal personal blog and portfolio theme for Hugo.
 From your Hugo site run the following.
 
 ```sh
-cd themes
-git clone https://github.com/vividvilla/ezhil.git
+git submodule add https://github.com/vividvilla/ezhil.git themes/ezhil
 ```
 
-For more information read the [official setup guide](https://gohugo.io/overview/installing/) of Hugo.
+Or without git submodules:
+
+```sh
+git clone https://github.com/vividvilla/ezhil.git themes/ezhil
+```
+
+For more information read the [official setup guide](https://gohugo.io/installation/) of Hugo.
 
 ## Configuration
 
@@ -44,21 +51,26 @@ theme = "ezhil"
 
 copyright = "© Copyright notice"
 
-# Enable syntax highlighting.
-pygmentsstyle = "solarized-dark"
-pygmentscodefences = true
-pygmentscodefencesguesssyntax = true
-
-# Your Google analytics code.
-googleAnalytics = "UA-123-45"
-# Your Disqus sortname.
-disqusShortname = "localhost"
-
-# Number of posts to show in recent posts list (Optional). Defaults to 10.
-paginate = 10
-
 # Number of characters to show in summary.
 summaryLength = 20
+
+# Number of posts to show in recent posts list (Optional). Defaults to 10.
+[pagination]
+  pagerSize = 10
+
+# Enable syntax highlighting.
+[markup.highlight]
+  style = "solarized-dark"
+  guessSyntax = true
+  noClasses = true
+
+# Your Disqus shortname.
+[services.disqus]
+  shortname = "your-disqus-shortname"
+
+# Your Google Analytics measurement ID.
+[services.googleAnalytics]
+  ID = "G-XXXXXXXXXX"
 
 [params]
     # Blog subtitle which appears below blog title. Supports markdown.
@@ -121,9 +133,9 @@ icon = "github"
 url = "https://github.com/vividvilla/ezhil"
 
 [[params.social]]
-name = "Twitter"
-icon = "twitter"
-url = "https://twitter.com/gohugoio"
+name = "RSS"
+icon = "rss"
+url = "index.xml"
 
 # Enable tags.
 [taxonomies]
@@ -146,7 +158,7 @@ This is some static page where you can write about yourself.
 
 ## Disable Disqus
 
-You can disable Disqus site wide if you don't set `DisqusShortname` param in config. You can also disable Disqus from contents selectively or for all contents with certain content type. Use content field `disqus` to disable Disqus from certain contents.
+You can disable Disqus site wide if you don't set the `services.disqus.shortname` param in config. You can also disable Disqus from contents selectively or for all contents with certain content type. Use content field `disqus` to disable Disqus from certain contents.
 
 ```md
 ---

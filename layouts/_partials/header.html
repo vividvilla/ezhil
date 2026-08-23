@@ -1,0 +1,51 @@
+<head>
+	<meta charset="utf-8" />
+	{{- $title := ( .Title ) -}}
+	{{- $siteTitle := ( .Site.Title ) -}}
+	{{- if .IsHome -}}
+	<title>{{ $siteTitle }}{{ with .Site.Params.subtitle }} - {{ . }}{{ end }}</title>
+	{{- else -}}
+	<title>{{ $title }} - {{ $siteTitle }}</title>
+	{{- end -}}
+
+	{{- with .Site.Params.favicon }}
+	<link rel="icon" href="{{ . | relURL }}" />
+	{{- end }}
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	{{ with .OutputFormats.Get "rss" -}}
+	{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+	{{ end -}}
+
+	{{- template "_internal/opengraph.html" . -}}
+	{{- template "_internal/twitter_cards.html" . -}}
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="{{ "css/normalize.css" | relURL }}" />
+	<link rel="stylesheet" type="text/css" media="screen" href="{{ "css/main.css" | relURL }}" />
+	{{- with .Site.Params.customCSS }}
+	<link rel="stylesheet" type="text/css" href="{{ . | relURL }}" />
+	{{- end }}
+	{{- if or (eq .Site.Params.mode "auto") (eq .Site.Params.mode "dark") }}
+	{{- $darkMedia := cond (eq .Site.Params.mode "auto") "(prefers-color-scheme: dark)" "screen" }}
+	<link rel="stylesheet" type="text/css" href="{{ "css/dark.css" | relURL }}" media="{{ $darkMedia }}" />
+	{{- with .Site.Params.customDarkCSS }}
+	<link rel="stylesheet" type="text/css" href="{{ . | relURL }}" media="{{ $darkMedia }}" />
+	{{- end }}
+	{{- end }}
+
+	{{ if .Site.Params.social -}}
+	{{ if .Site.Params.featherIconsCDN -}}
+	<script defer src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	{{- else -}}
+	<script defer src="{{ "js/feather.min.js" | relURL }}"></script>
+	{{- end }}
+	{{ end -}}
+	{{- range .Site.Params.customJS }}
+	{{- if or (hasPrefix . "http://") (hasPrefix . "https://") }}
+	<script src="{{ . }}"></script>
+	{{- else }}
+	<script src="{{ . | relURL }}"></script>
+	{{- end }}
+	{{- end }}
+</head>

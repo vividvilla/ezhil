@@ -1,0 +1,26 @@
+{{ define "wrapper-class" }}tags{{ end }}
+{{ define "main" }}
+<h1 class="page-title">{{ .Title }}</h1>
+
+{{ with .Content }}{{ . }}{{ end }}
+
+{{- $max := 3.0 }}
+{{- $min := 1.0 }}
+{{- $terms := .Data.Terms.ByCount }}
+{{- $biggest := 1 }}
+{{- $smallest := 1 }}
+{{- with $terms }}
+	{{- $biggest = (index . 0).Count }}
+	{{- $smallest = (index . (sub (len .) 1)).Count }}
+{{- end }}
+<div class="tag-cloud">
+{{- $span := sub $biggest $smallest }}
+{{- range $terms }}
+	{{- $size := $min }}
+	{{- if gt $span 0 }}
+	{{- $size = add $min (mul (div (float (sub .Count $smallest)) (float $span)) (sub $max $min)) }}
+	{{- end }}
+	<a style="font-size: {{ $size }}rem;" href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
+{{- end }}
+</div>
+{{ end }}
