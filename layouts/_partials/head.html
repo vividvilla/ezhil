@@ -4,15 +4,21 @@
 		{{- with .Site.Params.subtitle -}}
 		<h2>{{ . | markdownify }}</h2>
 		{{- end -}}
-		{{- with .Site.Params.social -}}
+		{{- $switcher := not .Site.Params.disableThemeSwitcher -}}
+		{{- if or .Site.Params.social $switcher -}}
 		<nav class="nav social">
 			<ul class="flat">
-				{{- range . -}}
+				{{- range .Site.Params.social -}}
 				{{- $url := .url -}}
 				{{- if and (hasPrefix $url "/") (not (hasPrefix $url "//")) -}}
 				{{- $url = relLangURL (strings.TrimPrefix "/" $url) -}}
 				{{- end -}}
 				<li><a href="{{ $url }}" title="{{ .name }}"><i data-feather="{{ .icon }}"></i></a></li>
+				{{- end -}}
+				{{- if $switcher -}}
+				<li class="theme-switch">
+					<button type="button" id="theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode"><i data-feather="moon" class="icon-to-dark"></i><i data-feather="sun" class="icon-to-light"></i></button>
+				</li>
 				{{- end -}}
 			</ul>
 		</nav>

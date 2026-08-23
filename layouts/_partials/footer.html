@@ -7,6 +7,6 @@
 {{ if not hugo.IsServer }}
 {{ template "_internal/google_analytics.html" . }}
 {{ end }}
-{{- with .Site.Params.social -}}
+{{- if or .Site.Params.social (not .Site.Params.disableThemeSwitcher) -}}
 <script>document.addEventListener('DOMContentLoaded', function () { feather.replace() })</script>
 {{- end -}}

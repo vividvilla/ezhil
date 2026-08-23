@@ -14,7 +14,7 @@ Requires Hugo **0.146.0 or newer**.
 ## Features
 
 * Clean and minimal
-* Dark mode (Auto detect from OS)
+* Dark mode (Auto detect from OS, with an optional light/dark toggle)
 * Responsive
 * Supports tags
 * Social media links
@@ -91,6 +91,10 @@ summaryLength = 20
     # Switch to dark mode or auto detect mode from OS (Optional).
     # "dark" will set mode to dark and "auto" will switch to dark mode if OS is in dark mode.
     mode = "dark" # "dark" or "auto"
+
+    # A light/dark toggle is shown as the last header icon by default. Set this
+    # to hide it and keep whichever `mode` is set above fixed.
+    disableThemeSwitcher = true
 
     # Custom CSS added to default styles. Files added to `static` folder is copied as it is to
     # root by Hugo. For example if you have custom CSS file under `static/css/custom.css` then
@@ -171,6 +175,18 @@ This is a content without Disqus comments.
 ```
 
 You can also disable Disqus for certain content types by using site param `disableDisqusTypes`. You can check config section above for example.
+
+## Theme switcher
+
+A light/dark toggle is rendered as the last icon in the header icon row, using
+the feather sun/moon icons. It works with any `mode`:
+
+* `auto` &mdash; follows the OS until the reader picks a theme
+* `dark` or `light` &mdash; that theme is the default, the reader can still switch
+
+The choice is stored in `localStorage`, applied before first paint so there is no
+flash of the wrong theme, and the toggle is hidden when JavaScript is unavailable.
+Set `disableThemeSwitcher = true` to remove it and keep `mode` fixed.
 
 ## Credits
 

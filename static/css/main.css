@@ -283,6 +283,35 @@ pre {
     max-height: 15px;
 }
 
+/* Only rendered once the inline script has resolved a theme, so it stays
+   hidden when JavaScript is unavailable and the button would do nothing. */
+.header nav ul.flat li.theme-switch {
+    display: none;
+}
+
+[data-theme] .header nav ul.flat li.theme-switch {
+    display: inline-block;
+}
+
+.theme-switch button {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: #a00;
+    cursor: pointer;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+.theme-switch .icon-to-light,
+[data-theme="dark"] .theme-switch .icon-to-dark {
+    display: none;
+}
+
+[data-theme="dark"] .theme-switch .icon-to-light {
+    display: inline-block;
+}
+
 .section .section-header {
     font-size: 0.75rem;
     font-weight: 600;

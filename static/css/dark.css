@@ -50,6 +50,10 @@ a:hover {
 	text-decoration: none !important;
 }
 
+.theme-switch button {
+	color: #ddd;
+}
+
 .header nav,
 .footer {
 	border-color: #333;

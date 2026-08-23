@@ -30,6 +30,7 @@ summaryLength = 20
 	disableDisqusTypes = ["page"]
 	featherIconsCDN = true
 	mode = "auto" # "dark", "auto", "light"
+	# disableThemeSwitcher = true  # Hide the light/dark toggle, keep `mode` fixed.
 	# favicon = "favicon.png"  # Path relative to the static directory.
 	# customCSS = "css/custom.css"  # Custom CSS applied to default styles.
 	# customDarkCSS = "css/custom-dark.css"  # Custom styles applied to dark mode css.
